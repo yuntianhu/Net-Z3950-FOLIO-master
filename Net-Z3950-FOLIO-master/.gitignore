@@ -1,0 +1,9 @@
+/Makefile
+MYMETA.json
+MYMETA.yml
+ModuleDescriptor.json
+REGRESSION
+blib
+cover_db
+pm_to_blib
+start

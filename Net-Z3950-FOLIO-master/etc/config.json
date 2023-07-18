@@ -1,0 +1,31 @@
+{
+  "indexMap": {
+    "default": "keyword",
+    "1": "contributors/@name",
+    "4": "title",
+    "7": "isbn",
+    "8": "issn",
+    "12": {
+      "cql": "hrid",
+      "relation": "==",
+      "omitSortIndexModifiers": [ "missing", "case" ]
+    },
+    "21": "subjects",
+    "31": "publication.dateOfPublication",
+    "1003": "contributors/@name",
+    "1016": "keyword",
+    "1019": "source",
+    "1108": "source",
+    "1155": "source",
+    "1211": "oclc",
+    "9997": "allTitles",
+    "9998": {
+      "cql": "item.barcode",
+      "relation": "=="
+    },
+    "9999": "contributors/@name,title,hrid,subjects"
+  },
+  "graphqlQuery": "mod-search.graphql-query",
+  "queryFilter": "cql.allRecords=1 NOT discoverySuppress=true",
+  "chunkSize": 5
+}

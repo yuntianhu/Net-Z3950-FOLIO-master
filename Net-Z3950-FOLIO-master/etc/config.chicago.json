@@ -1,0 +1,51 @@
+{
+  "okapi": {
+    "url": "https://uchicago-test-okapi.folio.indexdata.com",
+    "tenant": "uchicago"
+  },
+  "login": {
+    "username": "${OKAPI_USER-edgeZ3950}",
+    "password": "${OKAPI_CHICAGO_PASSWORD}"
+  },
+  "indexMap": {
+    "obsolete-override-for-7": "identifiers/@value/@identifierTypeId=\"cf0a2485-22e9-5be4-ac5c-fe393fb964e4\""
+  },
+  "marcHoldings": {
+    "restrictToItem": 1,
+    "field": "952",
+    "indicators": [" ", " "],
+    "holdingsElements": {
+      "t": "copyNumber"
+    },
+    "itemElements": {
+      "b": "itemId",
+      "k": "_callNumberPrefix",
+      "h": "_callNumber",
+      "l": "temporaryLocation",
+      "L": "_permanentLocation",
+      "m": "_callNumberSuffix",
+      "v": "_volume",
+      "e": "_enumeration",
+      "y": "_yearCaption",
+      "c": "_chronology"
+    }
+  },
+  "postProcessing": {
+    "opac": {
+      "holding": {
+        "callNumber": {
+          "op": "regsub",
+          "pattern": "(.*)",
+          "replacement": "%{_callNumberPrefix}$1%{_callNumberSuffix}"
+        }
+      },
+      "circulation": {
+        "itemId": {
+          "op": "regsub",
+          "pattern": "$",
+          "replacement": "/%{_enumeration}"
+        }
+      }
+    }
+  }
+}
